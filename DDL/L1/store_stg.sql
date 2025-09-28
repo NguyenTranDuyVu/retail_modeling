@@ -1,0 +1,7 @@
+CREATE OR REPLACE TABLE SNOWFLAKE_LEARNING_DB.L1.STORE_STG (
+    store_key VARCHAR(20) NOT NULL,
+    division VARCHAR(100),
+    district VARCHAR(100),
+    upazila VARCHAR(100),
+    ingest_time TIMESTAMP
+);

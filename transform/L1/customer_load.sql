@@ -1,0 +1,23 @@
+COPY INTO SNOWFLAKE_LEARNING_DB.L1.CUSTOMER_STG (
+    CUSTOMER_KEY,
+    NAME,
+    CONTACT_NO,
+    NID,
+    INGEST_TIME
+)
+FROM (
+    SELECT
+        $1,
+        $2,
+        $3,
+        $4,
+        CURRENT_TIMESTAMP()
+    FROM '@{{params.STAGE_NAME}}/{{params.STAGE_FILE_NAME}}'
+)
+FILE_FORMAT = (
+    TYPE = 'CSV',
+    FIELD_OPTIONALLY_ENCLOSED_BY = '"',
+    SKIP_HEADER = 1
+)
+ON_ERROR = 'CONTINUE'
+FORCE = TRUE;

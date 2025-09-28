@@ -1,0 +1,7 @@
+CREATE OR REPLACE TABLE SNOWFLAKE_LEARNING_DB.L1.CUSTOMER_STG (
+    customer_key VARCHAR(20) NOT NULL,
+    name VARCHAR(255),
+    contact_no VARCHAR(20),
+    nid VARCHAR(20),
+    ingest_time TIMESTAMP
+);

@@ -1,0 +1,6 @@
+CREATE OR REPLACE TABLE SNOWFLAKE_LEARNING_DB.L1.TRANSACTION_STG (
+    payment_key VARCHAR(20) NOT NULL,
+    trans_type VARCHAR(50),
+    bank_name VARCHAR(255),
+    ingest_time TIMESTAMP
+);
